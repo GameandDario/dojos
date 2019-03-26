@@ -11,10 +11,9 @@ function minmax(arr) {
     if (arr[i] < min) {
       min = arr[i];
     }
-    console.log(min, max);
   }
-
 
   return [min, max];
 }
-console.log(minmax(arr));
+
+module.exports = minmax;

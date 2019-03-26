@@ -1,7 +1,7 @@
 const arr = [1, 4, 12, 45];
 
 
-function minmax(arr) {
+module.exports = function minmax(arr) {
   let min = arr[0];
   let max = arr[0];
   for (let i = 0; i < arr.length; i++) {
@@ -14,6 +14,4 @@ function minmax(arr) {
   }
 
   return [min, max];
-}
-
-module.exports = minmax;
+};

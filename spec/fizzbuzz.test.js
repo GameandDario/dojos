@@ -1,5 +1,5 @@
 const assert = require('assert');
-const fizzBuzz = require('../fizzbuzz.js');
+const fizzBuzz = require('../fizzbuzz/fizzbuzz.js');
 
 describe('FizzBuzz value', function () {
 

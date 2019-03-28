@@ -1,6 +1,3 @@
-const arr = [1, 4, 12, 45];
-
-
 module.exports = function minmax(arr) {
   let min = arr[0];
   let max = arr[0];

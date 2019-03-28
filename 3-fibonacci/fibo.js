@@ -4,10 +4,10 @@
 const fibonacci = (maxValue) => {
   let last = 0;
   let current = 1;
-  let result = '';
+  let result = '0-1';
   for (let i = 0; i < maxValue; i++) {
     let mem = current;
-    result += `${(last + current)}-`;
+    result += `-${(last + current)}`;
     current = current + last;
     last = mem;
   }

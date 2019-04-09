@@ -2,33 +2,35 @@ import React, { Component } from 'react';
 import { wildersApiUrl } from '../../utils/url';
 import './Wilders.scss';
 import Wilder from './Wilder';
+
+
+
 export default class Wilders extends Component {
-  constructor (props){
-      super(props);
-      this.state = {
-      wilders:[]
-      }      
+  constructor(props) {
+    super(props);
+    this.state = {
+      wilders: []
+
     }
-    fetchWilders(){
-      fetch(wildersApiUrl)
-      .then (response => response.json())
-      .then (response => { 
-      this.setState ({wilders: response.users})
+  }
+  fetchWilders() {
+    fetch(wildersApiUrl)
+      .then(response => response.json())
+      .then(response => {
+        const wilders = response.users.filter(user => user.promotion_id === 2) 
+        this.setState({wilders})
       })
-      .catch (error => console.log(error))
-    }
+      .catch(error => console.log(error))
+  }
+
   render() {
     return (
       <div>
-        <p>You are in the wilder component</p>
-        <button onClick= {()=> this.fetchWilders()}>ClickMe
-        </button>
-          { this.state.wilders.filter(wilder => wilder.promotion_id===2).map((wilder)=>{
-           return <Wilder key={wilder.id} email={wilder.email} firstname={wilder.firstname} />
-
+        <button onClick={() => this.fetchWilders()}>COUCOU</button>
+        {
+          this.state.wilders.map((wilder, idx )=> {
+          return  <Wilder key={idx} name={wilder.firstname}  mail={wilder.email}/>
           })
-
-
         }
       </div>
     );

@@ -1,11 +1,13 @@
 import React from 'react';
 import './Wilder.scss';
-export default function Wilder({firstname="David", email="email@domain.com"}) {
+export default function Wilder({name, mail}) {
   return (
     <div>
-      {firstname}
-      -
-      {email}
+
+
+
+  name :    {name}
+  mail :    {mail}
 
     </div>
   );

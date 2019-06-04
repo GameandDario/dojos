@@ -1,8 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { connect } from "react-redux";
+import { authAction } from "./store/actions/auth";
 
-function App() {
+function App(props) {
+  console.log(props)
   return (
     <div className="App">
       <header className="App-header">
@@ -19,8 +22,14 @@ function App() {
           Learn React
         </a>
       </header>
+      <button onClick={()=> props.authAction({id: 1, username: 'toto', isConnected: true})}>click me</button>
     </div>
   );
 }
-
-export default App;
+const mapDispatchToProps = {
+  authAction
+}
+const mapStateToprops = (state) =>({
+  ...state
+})
+export default connect(mapStateToprops,mapDispatchToProps)(App);
